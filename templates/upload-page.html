@@ -1,0 +1,73 @@
+<!-- wistia video upload page -->
+<div class="upload-page">
+	<!-- navigation bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+		      	<a class="navbar-brand" href="">Wistia Uploader</a>
+		    </div>
+	  	</div>
+	</nav>
+
+	<div class="notification">
+		<span class="notifytext"></span>
+	</div>
+
+	<!-- main page content -->
+	<div class="container">
+	    <div class="uploader-template">
+	    	<!-- This container is shown when there is no upload taking place -->
+	    	<div ng-class="{showLabel: !startUpload}" ng-show="!startUpload">
+		    	<h2>Wistia Upload Widget</h2>
+
+		    	<p class="lead">Use this custom widget to upload video files to a Wistia account<br />and watch the file play right here. Let's start moving!</p>
+		    </div>
+
+		    <!-- This container is shown when upload starts -->
+	    	<div ng-class="{showLoader: startUpload}" ng-show="startUpload">
+	    		<h3>Uploading file. Please wait...</h3>
+
+		    	<!-- Upload progressbar container -->
+		    	<div class="progress-wrapper">
+	            	<div class="progress ng-cloak" ng-style="getStyle()">{{cProgress}}%</div>
+
+		    		<round-progress max="100" current="cProgress" color="#45CCCE" bgcolor="#EAEAEA" radius="100" semi="false" rounded="true" stroke="10" clockwise="true" responsive="false" duration="500" animation="easeInOutQuart" animation-delay="0">
+		    			<svg>
+		                    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+		                        <stop offset="5%"  stop-color="green"/>
+		                        <stop offset="95%" stop-color="gold"/>
+		                    </linearGradient>
+	                	</svg>
+		    		</round-progress>
+		    	</div>
+		    </div>
+
+		    <div class="row fileupload-buttonbar">
+	            <div class="col-lg-7">
+	                <!-- The fileinput-button span is used to style the file input field as button -->
+	                <span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
+	                    <i class="glyphicon glyphicon-upload"></i>
+
+	                    <span>Upload Video</span>
+
+	                    <!-- wistia-upload directive for uploading video -->
+	                    <input type="file" name="files[]" wistia-upload />
+	                </span>
+
+	                <button type="button" class="btn btn-warning cancel" ng-click="cancelUpload()">
+	                    <i class="glyphicon glyphicon-ban-circle"></i>
+
+	                    <span>Cancel Upload</span>
+	                </button>
+	            </div>
+            </div>
+	    </div>
+    </div>
+
+    <!-- footer bar -->
+	<footer class="footer">
+	    <div class="container">
+	    	<p class="text-muted">&copy; 2016 Akwasi Sefa-Boakye</p>
+	    </div>
+    </footer>
+</div>

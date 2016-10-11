@@ -1,0 +1,33 @@
+<!-- wistia video player page -->
+<div class="videoplayer-page">
+	<!-- navigation bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+		      	<a class="navbar-brand" href="">Wistia Uploader</a>
+		    </div>
+		    <div id="navbar" class="navbar-collapse collapse visible-xs-inline-block">
+	          	<ul class="nav navbar-nav navbar-right pull-right">
+		            <li class="active"><a href="#/">Back</a></li>
+	          	</ul>
+	        </div>
+	  	</div>
+	</nav>
+
+	<!-- main page content -->
+	<div class="container">
+		<!-- wistia responsive embed container and iframe for the playing videos -->
+      	<div class="wistia_responsive_padding" style="padding:56.25% 0 0 0; position:relative;">
+      		<div class="wistia_responsive_wrapper" style="height:100%; left:0; position:absolute; top:0; width:100%;">
+      			<iframe ng-src="{{videoSrc}}" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="100%" height="100%"></iframe>
+      		</div>
+      	</div>
+    </div>
+
+	<!-- footer bar -->
+	<footer class="footer hidden-md hidden-lg">
+	    <div class="container">
+	    	<p class="text-muted">&copy; 2016 Akwasi Sefa-Boakye</p>
+	    </div>
+    </footer>
+</div>
